@@ -1,0 +1,122 @@
+[
+  {
+    "id": "land-o-lakes",
+    "name": "Land O' Lakes",
+    "tag": "Original",
+    "address": "5132 Land O' Lakes Blvd",
+    "city": "Land O' Lakes",
+    "state": "FL",
+    "zip": "34639",
+    "phone": "813-235-6848 ext. 1",
+    "email": "info@jjosephsalon.com",
+    "instagram": "@jjosephsalon",
+    "hours": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 7:00 PM",
+      "wednesday": "9:00 AM - 7:00 PM",
+      "thursday": "9:00 AM - 7:00 PM",
+      "friday": "9:00 AM - 7:00 PM",
+      "saturday": "9:00 AM - 6:00 PM",
+      "sunday": "11:00 AM - 5:00 PM"
+    },
+    "description": "The original J. Joseph Salon at Dupree Plaza. Houses high-level stylists who specialize in innovative haircuts, advanced color techniques, and hair extensions.",
+    "image": "/images/locations/land-o-lakes.webp",
+    "mapEmbed": ""
+  },
+  {
+    "id": "lutz",
+    "name": "Lutz",
+    "tag": "As Seen on Daytime TV",
+    "address": "18861 FL-54",
+    "city": "Lutz",
+    "state": "FL",
+    "zip": "33558",
+    "phone": "813-235-6848 ext. 2",
+    "email": "info@jjosephsalon.com",
+    "instagram": "@jjosephsalon",
+    "hours": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 8:00 PM",
+      "wednesday": "9:00 AM - 8:00 PM",
+      "thursday": "9:00 AM - 8:00 PM",
+      "friday": "9:00 AM - 8:00 PM",
+      "saturday": "9:00 AM - 6:00 PM",
+      "sunday": "11:00 AM - 5:00 PM"
+    },
+    "description": "Well-known for Monday Makeovers on the syndicated television talk show Daytime. Talented stylists featured in national and international hair shows.",
+    "image": "/images/locations/lutz.webp",
+    "mapEmbed": ""
+  },
+  {
+    "id": "citrus-park",
+    "name": "Citrus Park",
+    "tag": "Creative Hub",
+    "address": "8616 Citrus Park Dr",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33625",
+    "phone": "813-235-6848 ext. 3",
+    "email": "info@jjosephsalon.com",
+    "instagram": "@jjosephsalon",
+    "hours": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 8:00 PM",
+      "wednesday": "9:00 AM - 8:00 PM",
+      "thursday": "9:00 AM - 8:00 PM",
+      "friday": "9:00 AM - 8:00 PM",
+      "saturday": "9:00 AM - 6:00 PM",
+      "sunday": "11:00 AM - 5:00 PM"
+    },
+    "description": "A vibrant modern salon home to some of J. Joseph's most talented and world-traveled stylists. Located in front of Citrus Park Mall.",
+    "image": "/images/locations/citrus-park.webp",
+    "mapEmbed": ""
+  },
+  {
+    "id": "odessa",
+    "name": "Odessa",
+    "tag": "Tampa A-List Winner",
+    "address": "13541 FL-54",
+    "city": "Odessa",
+    "state": "FL",
+    "zip": "33556",
+    "phone": "813-235-6848 ext. 4",
+    "email": "info@jjosephsalon.com",
+    "instagram": "@jjosephsalon",
+    "hours": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 8:00 PM",
+      "wednesday": "9:00 AM - 8:00 PM",
+      "thursday": "9:00 AM - 8:00 PM",
+      "friday": "9:00 AM - 8:00 PM",
+      "saturday": "9:00 AM - 6:00 PM",
+      "sunday": "11:00 AM - 5:00 PM"
+    },
+    "description": "One of our most highly decorated locations in Starkey Ranch Town Square. Named best hair salon by Tampa A-List.",
+    "image": "/images/locations/odessa.webp",
+    "mapEmbed": ""
+  },
+  {
+    "id": "wesley-chapel",
+    "name": "Wesley Chapel",
+    "tag": "Newest",
+    "address": "1738 Bruce B Downs Blvd",
+    "city": "Wesley Chapel",
+    "state": "FL",
+    "zip": "33544",
+    "phone": "813-235-6848 ext. 5",
+    "email": "info@jjosephsalon.com",
+    "instagram": "@jjosephsalon",
+    "hours": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 8:00 PM",
+      "wednesday": "9:00 AM - 8:00 PM",
+      "thursday": "9:00 AM - 8:00 PM",
+      "friday": "9:00 AM - 8:00 PM",
+      "saturday": "9:00 AM - 6:00 PM",
+      "sunday": "11:00 AM - 5:00 PM"
+    },
+    "description": "Renowned for modern elegance at the Shops at New Tampa. Houses our most senior stylists with a combined experience of over 30 years.",
+    "image": "/images/locations/wesley-chapel.webp",
+    "mapEmbed": ""
+  }
+]

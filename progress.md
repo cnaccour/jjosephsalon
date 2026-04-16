@@ -1,13 +1,13 @@
 # J. Joseph Salon — Rebuild Progress
 
-## Status: Phase 1 — Foundation
+## Status: Phase 1 Complete ✓ — Ready for Phase 2 (Homepage Scenes)
 
 ---
 
 ## Phase 1: Project Foundation
-- [ ] Task 1: Scaffold Astro 5 project (React + Tailwind 4 + GSAP + Lenis)
-- [ ] Task 2: Data layer — services, locations, levels, site config JSON + Content Collections
-- [ ] Task 3: Shared components — Nav, MenuOverlay, BookButton, Cursor, Footer
+- [x] Task 1: Scaffold Astro 5 project (React + Tailwind 4 + GSAP + Lenis)
+- [x] Task 2: Data layer — services, locations, levels, site config JSON + Content Collections
+- [x] Task 3: Shared components — Nav, MenuOverlay, BookButton, Cursor, Footer
 
 ## Phase 2: Homepage Scenes
 - [ ] Task 4: Scene 1 — Hero (text reveal + video background)
@@ -41,3 +41,7 @@
 - GitHub repo created: github.com/cnaccour/jjosephsalon
 - Implementation plan written (17 tasks across 4 phases)
 - Starting Phase 1 build
+- **Task 1 complete**: Astro 5 scaffolded with React, Tailwind 4, GSAP, Lenis, self-hosted fonts
+- **Task 2 complete**: Data layer — site.json, locations.json (5), services.json (42 services, 5 categories), levels.json (10), content collections config, placeholder markdown
+- **Task 3 complete**: Nav (mix-blend-difference), MenuOverlay (GSAP clip-path animation), BookButton (Boulevard trigger), Cursor (gold, lerp, scale on hover), FooterMinimal (one-line)
+- **Phase 1 complete** — build passes with zero errors

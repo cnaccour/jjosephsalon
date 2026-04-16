@@ -31,7 +31,9 @@
       "Bash(rm -rf /c/Users/cnacc/jjs-temp)",
       "Bash(npx astro:*)",
       "Bash(npm install:*)",
-      "Bash(timeout 15 npm run dev)"
+      "Bash(timeout 15 npm run dev)",
+      "Bash(git commit -m ':*)",
+      "Bash(npm run:*)"
     ]
   }
 }

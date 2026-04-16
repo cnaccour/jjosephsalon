@@ -1,0 +1,50 @@
+---
+import BookButton from "@components/BookButton";
+---
+
+<nav
+  class="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 md:px-12 py-6 flex items-center justify-between"
+>
+  <!-- Logo -->
+  <a href="/" class="block">
+    <span class="font-heading text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-white">
+      J. Joseph Salon
+    </span>
+  </a>
+
+  <!-- Right side -->
+  <div class="flex items-center gap-6">
+    <BookButton client:load variant="nav" className="hidden md:inline-flex" />
+
+    <!-- Hamburger -->
+    <button
+      id="menu-toggle"
+      type="button"
+      class="flex flex-col justify-center items-end gap-[5px] w-8 h-8"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span class="block w-5 h-[1.5px] bg-white transition-transform origin-center"></span>
+      <span class="block w-3.5 h-[1.5px] bg-white transition-transform origin-center"></span>
+    </button>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById("menu-toggle");
+  let open = false;
+
+  btn?.addEventListener("click", () => {
+    open = !open;
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    window.dispatchEvent(new CustomEvent("menu-toggle", { detail: { open } }));
+  });
+
+  // Allow external close (e.g. from MenuOverlay link click)
+  window.addEventListener("menu-close", () => {
+    open = false;
+    btn?.setAttribute("aria-expanded", "false");
+    btn?.setAttribute("aria-label", "Open menu");
+  });
+</script>

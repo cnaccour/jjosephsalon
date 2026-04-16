@@ -1,0 +1,72 @@
+[
+  {
+    "id": "apprentice",
+    "name": "Apprentice",
+    "rank": 1,
+    "summary": "Stylists-in-training building their foundation under expert mentorship.",
+    "description": "Apprentice stylists are actively training under the guidance of senior team members. They assist on the salon floor while completing their education, learning advanced techniques in cutting, color, and client communication. This is the starting point of the J. Joseph career path."
+  },
+  {
+    "id": "foundation",
+    "name": "Foundation",
+    "rank": 2,
+    "summary": "Skilled stylists delivering consistent quality across core services.",
+    "description": "Foundation stylists have completed their apprenticeship and demonstrated proficiency in essential salon services. They deliver reliable results in haircuts, color, and styling while continuing to refine their craft. Pricing for all services on our menu is based on the Foundation level."
+  },
+  {
+    "id": "junior",
+    "name": "Junior",
+    "rank": 3,
+    "summary": "Rising professionals with a growing client base and expanding skill set.",
+    "description": "Junior stylists have established a solid client following and show a strong command of technical skills. They handle a wider range of services with confidence and are beginning to develop a personal artistic style that sets their work apart."
+  },
+  {
+    "id": "advanced",
+    "name": "Advanced",
+    "rank": 4,
+    "summary": "Experienced stylists known for versatility and attention to detail.",
+    "description": "Advanced stylists bring years of hands-on experience and a reputation for delivering exceptional results. They are versatile across all service categories and frequently handle complex color corrections, transformations, and special occasion styling with precision."
+  },
+  {
+    "id": "senior",
+    "name": "Senior",
+    "rank": 5,
+    "summary": "Highly sought-after stylists with deep expertise and loyal clientele.",
+    "description": "Senior stylists are among the most requested professionals in the salon. Their deep expertise spans advanced cutting, multi-dimensional color, and hair extensions. They serve as mentors on the floor and are trusted with the salon's most discerning clients."
+  },
+  {
+    "id": "master",
+    "name": "Master",
+    "rank": 6,
+    "summary": "Top-tier professionals recognized for mastery across all disciplines.",
+    "description": "Master stylists have reached a level of artistry that combines technical mastery with creative vision. They lead by example, set trends within the salon, and frequently represent J. Joseph at industry events and educational platforms."
+  },
+  {
+    "id": "specialist",
+    "name": "Specialist",
+    "rank": 7,
+    "summary": "Experts with focused excellence in a particular service discipline.",
+    "description": "Specialists have honed their skills in a specific area such as curly hair, extensions, or corrective color. Their deep focus and advanced training make them the go-to authority for clients seeking expertise in their discipline."
+  },
+  {
+    "id": "elite",
+    "name": "Elite",
+    "rank": 8,
+    "summary": "Award-winning stylists with national recognition and editorial experience.",
+    "description": "Elite stylists carry national recognition, competition accolades, and editorial credits. They deliver runway-caliber work behind the chair and serve as brand ambassadors for J. Joseph Salon at trade shows and industry showcases."
+  },
+  {
+    "id": "artistic-director",
+    "name": "Artistic Director",
+    "rank": 9,
+    "summary": "Creative leaders who shape the salon's artistic direction and education.",
+    "description": "Artistic Directors define the creative vision of J. Joseph Salon. They lead education programs, develop new techniques, and ensure every stylist on the team upholds the brand's standard of excellence. Their influence extends from the salon floor to the stage."
+  },
+  {
+    "id": "visionary-director",
+    "name": "Visionary Director",
+    "rank": 10,
+    "summary": "The pinnacle of the J. Joseph career path, driving the brand's future.",
+    "description": "Visionary Directors represent the highest level of achievement at J. Joseph Salon. They shape brand strategy, lead major creative initiatives, and serve as the public face of the salon's artistic identity. Their work defines the standard that every stylist aspires to reach."
+  }
+]

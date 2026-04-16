@@ -1,16 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import siteData from "@/data/site.json";
+import locationsData from "@/data/locations.json";
+import servicesData from "@/data/services.json";
+import levelsData from "@/data/levels.json";
 ---
 
-<Layout title="J. Joseph Salon — Voted Best in Tampa Bay">
+<Layout title={`${siteData.name} — Voted Best in Tampa Bay`}>
   <main>
     <section class="flex h-screen items-center justify-center">
       <div class="text-center">
         <h1 class="font-heading text-6xl font-bold tracking-tight text-cream">
-          J. Joseph Salon
+          {siteData.name}
         </h1>
         <p class="mt-4 text-sm text-cream-dark/50">
-          Foundation ready. Building scenes next.
+          {locationsData.length} Locations · {servicesData.categories.length} Service Categories · {levelsData.length} Stylist Levels
         </p>
       </div>
     </section>

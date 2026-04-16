@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "id": "hair",
+      "name": "Hair",
+      "services": [
+        { "name": "Women's Haircut & Style", "price": "$51" },
+        { "name": "Men's Haircut & Style", "price": "$41" },
+        { "name": "Shampoo & Finish", "price": "$46" },
+        { "name": "Bang Trim", "price": "$23" },
+        { "name": "Beard Trim", "price": "$18" },
+        { "name": "Special Occasion Hair", "price": "$67" },
+        { "name": "Updo", "price": "$82" },
+        { "name": "Flat Iron", "price": "$15" },
+        { "name": "Curling Iron", "price": "$15" }
+      ]
+    },
+    {
+      "id": "color",
+      "name": "Color",
+      "services": [
+        { "name": "Color Retouch", "price": "$75" },
+        { "name": "Full Color", "price": "$120" },
+        { "name": "Gels", "price": "$82" },
+        { "name": "Shades EQ", "price": "$79" },
+        { "name": "Men's Color Camo", "price": "$58" },
+        { "name": "Face Framing Highlights", "price": "$88" },
+        { "name": "Partial Highlights", "price": "$99" },
+        { "name": "3/4 Highlights", "price": "$115" },
+        { "name": "Full Highlights", "price": "$127" },
+        { "name": "Face Framing Balayage", "price": "$110" },
+        { "name": "Partial Balayage", "price": "$125" },
+        { "name": "3/4 Balayage", "price": "$135" },
+        { "name": "Full Balayage", "price": "$151" },
+        { "name": "Wet Balayage", "price": "$52" },
+        { "name": "Additional Colors", "price": "$43" },
+        { "name": "Accent Foils (Per Foil)", "price": "$20" },
+        { "name": "Cap Highlights", "price": "$95" },
+        { "name": "Glaze", "price": "$51" },
+        { "name": "Corrective Color (hour)", "price": "$100" },
+        { "name": "Brow Tint", "price": "$30" }
+      ]
+    },
+    {
+      "id": "texture",
+      "name": "Texture",
+      "services": [
+        { "name": "Keratin", "price": "Consultation" },
+        { "name": "Perm", "price": "$130" }
+      ]
+    },
+    {
+      "id": "treatments",
+      "name": "Treatments",
+      "services": [
+        { "name": "Deep Conditioning", "price": "$42" },
+        { "name": "Clarifying Treatment", "price": "$34" },
+        { "name": "Redken Pre-Art", "price": "$35" },
+        { "name": "K-18 Treatment", "price": "$65" }
+      ]
+    },
+    {
+      "id": "waxing",
+      "name": "Waxing",
+      "services": [
+        { "name": "Brow Shaping", "price": "$25" },
+        { "name": "Lip Wax", "price": "$20" },
+        { "name": "Chin Wax", "price": "$20" },
+        { "name": "Brow/Lip Combo", "price": "$34" },
+        { "name": "Brow Threading", "price": "$25" },
+        { "name": "Lip or Chin Threading", "price": "$20" },
+        { "name": "Full Face Threading", "price": "$48" }
+      ]
+    }
+  ],
+  "pricing_note": "Our prices vary based on the stylist level. The prices shown are for Foundation stylists only.",
+  "homepage_services": [
+    {
+      "id": "cut-style",
+      "name": "Cut & Style",
+      "description": "Precision haircuts tailored to your face shape, hair texture, and personal style.",
+      "price_from": "$41",
+      "image": "/images/services/cut-style.webp"
+    },
+    {
+      "id": "color-balayage",
+      "name": "Color & Balayage",
+      "description": "From subtle highlights to full transformations, our colorists create dimension and depth.",
+      "price_from": "$75",
+      "image": "/images/services/color-balayage.webp"
+    },
+    {
+      "id": "treatments",
+      "name": "Treatments",
+      "description": "Restore and protect your hair with deep conditioning, K-18, and clarifying treatments.",
+      "price_from": "$34",
+      "image": "/images/services/treatments.webp"
+    },
+    {
+      "id": "extensions",
+      "name": "Extensions",
+      "description": "Add length, volume, and versatility with professionally applied hair extensions.",
+      "price_from": "Consultation",
+      "image": "/images/services/extensions.webp"
+    },
+    {
+      "id": "curly-hair",
+      "name": "Curly Hair Experience",
+      "description": "Specialized cutting and styling techniques designed exclusively for curly and textured hair.",
+      "price_from": "Consultation",
+      "image": "/images/services/curly-hair.webp"
+    },
+    {
+      "id": "cutting-specialist",
+      "name": "Cutting Specialist",
+      "description": "Our most advanced cutters deliver editorial-quality precision for any hair type.",
+      "price_from": "Consultation",
+      "image": "/images/services/cutting-specialist.webp"
+    }
+  ]
+}

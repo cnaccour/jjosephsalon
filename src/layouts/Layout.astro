@@ -1,14 +1,20 @@
 ---
 import "@/styles/global.css";
+import Nav from "@/components/Nav.astro";
+import MenuOverlay from "@/components/MenuOverlay";
+import Cursor from "@/components/Cursor";
+import FooterMinimal from "@/components/FooterMinimal.astro";
 
 interface Props {
   title: string;
   description?: string;
+  hideFooter?: boolean;
 }
 
 const {
   title,
   description = "J. Joseph Salon — Upscale hair salons in Tampa Bay. Voted Best in Tampa Bay.",
+  hideFooter = false,
 } = Astro.props;
 ---
 
@@ -44,7 +50,16 @@ const {
     >
     </div>
 
+    <!-- Custom cursor (desktop only) -->
+    <Cursor client:load />
+
+    <!-- Navigation -->
+    <Nav />
+    <MenuOverlay client:load />
+
     <slot />
+
+    {!hideFooter && <FooterMinimal />}
 
     <!-- Boulevard Self-Booking overlay -->
     <script is:inline>
