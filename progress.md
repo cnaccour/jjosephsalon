@@ -1,6 +1,6 @@
 # J. Joseph Salon — Rebuild Progress
 
-## Status: Phase 1 Complete ✓ — Ready for Phase 2 (Homepage Scenes)
+## Status: Phase 2 Complete ✓ — Ready for Phase 3 (Inner Pages)
 
 ---
 
@@ -10,12 +10,12 @@
 - [x] Task 3: Shared components — Nav, MenuOverlay, BookButton, Cursor, Footer
 
 ## Phase 2: Homepage Scenes
-- [ ] Task 4: Scene 1 — Hero (text reveal + video background)
-- [ ] Task 5: Scene 2 — Scroll-pinned brand narrative
-- [ ] Task 6: Scene 3 — Horizontal scroll services
-- [ ] Task 7: Scene 4 — Interactive location index
-- [ ] Task 8: Scene 5 — Testimonial moment
-- [ ] Task 9: Scene 6 — CTA close + homepage assembly
+- [x] Task 4: Scene 1 — Hero (text reveal + video background)
+- [x] Task 5: Scene 2 — Scroll-pinned brand narrative
+- [x] Task 6: Scene 3 — Horizontal scroll services
+- [x] Task 7: Scene 4 — Interactive location index
+- [x] Task 8: Scene 5 — Testimonial moment
+- [x] Task 9: Scene 6 — CTA close + homepage assembly
 
 ## Phase 3: Inner Pages
 - [ ] Task 10: Services + service detail pages
@@ -45,3 +45,11 @@
 - **Task 2 complete**: Data layer — site.json, locations.json (5), services.json (42 services, 5 categories), levels.json (10), content collections config, placeholder markdown
 - **Task 3 complete**: Nav (mix-blend-difference), MenuOverlay (GSAP clip-path animation), BookButton (Boulevard trigger), Cursor (gold, lerp, scale on hover), FooterMinimal (one-line)
 - **Phase 1 complete** — build passes with zero errors
+- **Task 4 complete**: Scene 1 Hero — full-viewport, word-by-word GSAP reveal, video placeholder, scroll indicator, sr-only H1 for SEO
+- **Task 5 complete**: Scene 2 Pinned — 300vh scroll-driven crossfade between 3 brand statements with image placeholders
+- **Task 6 complete**: Scene 3 Services — horizontal scroll with ScrollTrigger pin (desktop), native swipe (mobile), 6 service panels with progress bar
+- **Task 7 complete**: Scene 4 Locations — interactive text index, hover reveals details + image preview, expandable rows on mobile
+- **Task 8 complete**: Scene 5 Quote — auto-rotating testimonials, giant "5.0" parallax bg, gold stars, Google badge, navigation dots
+- **Task 9 complete**: Scene 6 CTA — "It's You Time." with hover-fill booking button, minimal footer
+- Homepage assembled in index.astro with HairSalon structured data (JSON-LD), SEO title/meta, all 6 scenes wired
+- **Phase 2 complete** — build passes with zero errors

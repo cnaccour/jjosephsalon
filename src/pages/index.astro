@@ -3,20 +3,79 @@ import Layout from "@/layouts/Layout.astro";
 import siteData from "@/data/site.json";
 import locationsData from "@/data/locations.json";
 import servicesData from "@/data/services.json";
-import levelsData from "@/data/levels.json";
+
+import Scene1Hero from "@/components/home/Scene1Hero";
+import Scene2Pinned from "@/components/home/Scene2Pinned";
+import Scene3Services from "@/components/home/Scene3Services";
+import Scene4Locations from "@/components/home/Scene4Locations";
+import Scene5Quote from "@/components/home/Scene5Quote";
+import Scene6CTA from "@/components/home/Scene6CTA.astro";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  name: siteData.name,
+  description:
+    "Award-winning upscale hair salons in Tampa Bay. Balayage, precision cuts, color, extensions and treatments. 5 locations across Pasco and Hillsborough County.",
+  url: "https://jjosephsalon.com",
+  telephone: siteData.phone,
+  email: siteData.email,
+  image: "https://jjosephsalon.com/images/og-image.jpg",
+  priceRange: "$$",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "789",
+    bestRating: "5",
+  },
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: 28.2197,
+      longitude: -82.4663,
+    },
+    geoRadius: "30 mi",
+  },
+  sameAs: [
+    siteData.social.instagram,
+    siteData.social.tiktok,
+    siteData.social.facebook,
+  ],
+  department: locationsData.map((loc: any) => ({
+    "@type": "HairSalon",
+    name: `J. Joseph Salon — ${loc.name}`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: loc.address,
+      addressLocality: loc.city,
+      addressRegion: loc.state,
+      postalCode: loc.zip,
+      addressCountry: "US",
+    },
+    telephone: loc.phone,
+  })),
+};
 ---
 
-<Layout title={`${siteData.name} — Voted Best in Tampa Bay`}>
+<Layout
+  title="J. Joseph Salon | Best Hair Salon in Tampa Bay, FL"
+  description="Award-winning upscale hair salons in Tampa Bay. Balayage, precision cuts, color, extensions & treatments. 5 locations. Book your appointment today."
+  hideFooter={false}
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  </Fragment>
+
   <main>
-    <section class="flex h-screen items-center justify-center">
-      <div class="text-center">
-        <h1 class="font-heading text-6xl font-bold tracking-tight text-cream">
-          {siteData.name}
-        </h1>
-        <p class="mt-4 text-sm text-cream-dark/50">
-          {locationsData.length} Locations · {servicesData.categories.length} Service Categories · {levelsData.length} Stylist Levels
-        </p>
-      </div>
-    </section>
+    <Scene1Hero client:load />
+    <Scene2Pinned client:visible />
+    <Scene3Services client:visible services={servicesData.homepage_services} />
+    <Scene4Locations client:visible locations={locationsData} />
+    <Scene5Quote client:visible />
+    <Scene6CTA />
   </main>
 </Layout>
