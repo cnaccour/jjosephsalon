@@ -1,0 +1,80 @@
+---
+import "@/styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "J. Joseph Salon — Upscale hair salons in Tampa Bay. Voted Best in Tampa Bay.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/SpaceGrotesk-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/InstrumentSans-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <!-- Grain overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 z-[9998] opacity-[0.03]"
+      style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;); background-repeat: repeat; background-size: 200px;"
+      aria-hidden="true"
+    >
+    </div>
+
+    <slot />
+
+    <!-- Boulevard Self-Booking overlay -->
+    <script is:inline>
+      !(function () {
+        var e = document.createElement("script");
+        e.type = "text/javascript";
+        e.async = true;
+        e.src = "https://static.joinboulevard.com/injector.min.js";
+        var t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e, t);
+      })();
+    </script>
+    <a href="#book-now" id="boulevard-trigger" class="hidden" aria-hidden="true">
+      Book
+    </a>
+
+    <!-- Lenis smooth scroll + GSAP sync -->
+    <script>
+      import Lenis from "lenis";
+      import gsap from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const lenis = new Lenis();
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    </script>
+  </body>
+</html>

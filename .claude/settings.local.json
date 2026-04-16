@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:www.celine.com)",
+      "WebFetch(domain:www.acnestudios.com)",
+      "WebFetch(domain:www.aesop.com)",
+      "WebFetch(domain:www.tomford.com)",
+      "WebFetch(domain:www.byredo.com)",
+      "WebSearch",
+      "WebFetch(domain:www.awwwards.com)",
+      "WebFetch(domain:mistretta-coiffure.com)",
+      "WebFetch(domain:serenityhairsalon.com.au)",
+      "WebFetch(domain:docs.astro.build)",
+      "WebFetch(domain:gsap.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Read(//c/Users/cnacc/App/**)",
+      "Read(//c/Users/cnacc/App//**)",
+      "Read(//c/Users/cnacc/**)",
+      "Bash(git init:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m 'Initial commit — design spec, implementation plan, reference material:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(npm create:*)",
+      "Bash(cp -r /c/Users/cnacc/jjs-temp/* /c/Users/cnacc/jjosephsalon/)",
+      "Bash(cp /c/Users/cnacc/jjs-temp/.* /c/Users/cnacc/jjosephsalon/)",
+      "Bash(rm -rf /c/Users/cnacc/jjs-temp)",
+      "Bash(npx astro:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 15 npm run dev)"
+    ]
+  }
+}
