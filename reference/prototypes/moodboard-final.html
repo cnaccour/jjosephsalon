@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JJS Redesign — Final Moodboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0C0B09;
+    --black-warm: #141210;
+    --surface: #1C1A17;
+    --gold: #AF831A;
+    --gold-soft: #C4A044;
+    --cream: #F4F1EB;
+    --cream-dark: #E8E3DA;
+  }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--black);
+    color: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- HEADER ---- */
+  .mb-header {
+    padding: 80px 48px 60px;
+    border-bottom: 1px solid rgba(175,131,26,0.15);
+  }
+  .mb-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+  .mb-header h1 em {
+    font-family: 'Instrument Sans', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  .mb-header p {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: rgba(232,227,218,0.4);
+    max-width: 500px;
+    line-height: 1.7;
+  }
+  .mb-header .status {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--black);
+    background: var(--gold);
+    padding: 6px 16px;
+    border-radius: 3px;
+  }
+
+  /* ---- SECTION ---- */
+  .mb-section {
+    padding: 80px 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .mb-section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .section-desc {
+    font-size: 0.85rem;
+    color: rgba(232,227,218,0.4);
+    max-width: 550px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  /* ---- PALETTE ---- */
+  .palette {
+    display: flex;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 140px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+  .swatch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 14px;
+    transition: flex 0.3s;
+  }
+  .swatch:hover { flex: 1.6; }
+  .swatch-name {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  .swatch-hex {
+    font-size: 0.55rem;
+    opacity: 0.6;
+    font-family: 'Space Grotesk', monospace;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    margin-top: 2px;
+  }
+  .palette-note {
+    margin-top: 16px;
+    font-size: 0.7rem;
+    color: rgba(232,227,218,0.25);
+    font-style: italic;
+  }
+
+  /* ---- TYPOGRAPHY ---- */
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .type-card {
+    padding: 48px;
+    border-radius: 8px;
+  }
+  .type-card .meta {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-bottom: 24px;
+  }
+  .type-card h3 {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .type-card p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    opacity: 0.65;
+  }
+
+  /* ---- UI PATTERNS ---- */
+  .patterns-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  .pattern-card {
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .pattern-preview {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pattern-info {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .pattern-info h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+  .pattern-info p {
+    font-size: 0.7rem;
+    color: rgba(232,227,218,0.35);
+    line-height: 1.5;
+  }
+
+  /* ---- NAV MOCK ---- */
+  .mock-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    mix-blend-mode: difference;
+  }
+  .mock-nav .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .mock-nav .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .mock-nav .book {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 16px;
+  }
+  .mock-nav .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+  .mock-nav .burger span {
+    display: block;
+    height: 1.5px;
+    background: #fff;
+  }
+  .mock-nav .burger span:first-child { width: 20px; }
+  .mock-nav .burger span:last-child { width: 14px; }
+
+  /* ---- MENU OVERLAY MOCK ---- */
+  .mock-menu {
+    background: var(--black);
+    padding: 48px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    border-radius: 0 0 8px 8px;
+  }
+  .mock-menu a {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    text-decoration: none;
+    line-height: 1.3;
+    transition: color 0.3s;
+  }
+  .mock-menu a:hover { color: var(--gold); }
+  .mock-menu .side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mock-menu .side-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(232,227,218,0.3);
+    margin-bottom: 12px;
+  }
+  .mock-menu .side a {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: rgba(232,227,218,0.5);
+    line-height: 1.8;
+  }
+  .mock-menu .contact {
+    font-size: 0.75rem;
+    color: rgba(232,227,218,0.3);
+    line-height: 1.8;
+  }
+
+  /* ---- HERO TEXT MOCK ---- */
+  .mock-hero-text {
+    padding: 80px 32px 48px;
+    position: relative;
+  }
+  .mock-hero-text .overline {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .mock-hero-text h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+  .mock-hero-text h2 em {
+    font-family: 'Instrument Sans', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+  }
+  .mock-hero-text .sub {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: rgba(232,227,218,0.4);
+    max-width: 300px;
+    line-height: 1.7;
+  }
+  .mock-hero-text .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--cream);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+  }
+
+  /* ---- LOCATION INDEX MOCK ---- */
+  .mock-loc-index {
+    padding: 32px;
+  }
+  .mock-loc-item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .mock-loc-item:hover { padding-left: 12px; }
+  .mock-loc-item:hover .loc-name { color: var(--gold); }
+  .loc-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+  .loc-tag {
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(232,227,218,0.25);
+  }
+  .mock-loc-item:hover .loc-tag { color: var(--gold); }
+
+  /* ---- HORIZONTAL SCROLL MOCK ---- */
+  .mock-hscroll {
+    display: flex;
+    gap: 16px;
+    padding: 32px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .mock-hscroll::-webkit-scrollbar { display: none; }
+  .mock-hscroll-card {
+    flex: 0 0 200px;
+    height: 280px;
+    background: var(--cream-dark);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mock-hscroll-card .num {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .mock-hscroll-card h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--black);
+  }
+  .mock-hscroll-card .price {
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  /* ---- FOOTER MOCK ---- */
+  .mock-footer {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.04em;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .mock-footer a {
+    color: rgba(255,255,255,0.15);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s;
+  }
+  .mock-footer a:hover { color: rgba(255,255,255,0.4); }
+
+  /* ---- INTERACTION TAGS ---- */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 40px;
+  }
+  .tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(232,227,218,0.45);
+  }
+
+  /* ---- ARCHITECTURE DIAGRAM ---- */
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .arch-node {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 16px 24px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 140px;
+  }
+  .arch-node h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+  .arch-node p {
+    font-size: 0.6rem;
+    color: rgba(232,227,218,0.3);
+  }
+  .arch-arrow {
+    color: var(--gold);
+    font-size: 1.2rem;
+    padding: 0 12px;
+  }
+  .arch-node.active {
+    border-color: var(--gold);
+    background: rgba(175,131,26,0.08);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .type-grid { grid-template-columns: 1fr; }
+    .patterns-grid { grid-template-columns: 1fr; }
+    .mb-section { padding: 60px 24px; }
+    .mb-header { padding: 60px 24px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="mb-header">
+  <h1>J. Joseph Salon<br><em>Redesign</em></h1>
+  <p>Final design direction — locked-in colors, typography, architecture, and interaction patterns. This is what we're building.</p>
+  <span class="status">Approved — April 2026</span>
+</header>
+
+
+<!-- 01: COLOR PALETTE -->
+<section class="mb-section">
+  <div class="section-label">01 — Color</div>
+  <div class="section-title">Palette</div>
+  <div class="section-desc">Warm blacks with gold accent. Dark scenes for impact, cream scenes for readability. Gold is accent only — never a full background fill.</div>
+
+  <div class="palette">
+    <div class="swatch" style="background:var(--black); color:#fff;">
+      <span class="swatch-name">Black</span>
+      <span class="swatch-hex">#0C0B09</span>
+    </div>
+    <div class="swatch" style="background:var(--black-warm); color:#fff;">
+      <span class="swatch-name">Black Warm</span>
+      <span class="swatch-hex">#141210</span>
+    </div>
+    <div class="swatch" style="background:var(--surface); color:#fff;">
+      <span class="swatch-name">Surface</span>
+      <span class="swatch-hex">#1C1A17</span>
+    </div>
+    <div class="swatch" style="background:var(--gold); color:#fff;">
+      <span class="swatch-name">JJS Gold</span>
+      <span class="swatch-hex">#AF831A</span>
+    </div>
+    <div class="swatch" style="background:var(--gold-soft); color:var(--black);">
+      <span class="swatch-name">Gold Soft</span>
+      <span class="swatch-hex">#C4A044</span>
+    </div>
+    <div class="swatch" style="background:var(--cream-dark); color:var(--black);">
+      <span class="swatch-name">Cream Dark</span>
+      <span class="swatch-hex">#E8E3DA</span>
+    </div>
+    <div class="swatch" style="background:var(--cream); color:var(--black);">
+      <span class="swatch-name">Cream</span>
+      <span class="swatch-hex">#F4F1EB</span>
+    </div>
+  </div>
+  <p class="palette-note">Gold (#AF831A) is the brand constant. Everything else supports it.</p>
+</section>
+
+
+<!-- 02: TYPOGRAPHY -->
+<section class="mb-section">
+  <div class="section-label">02 — Typography</div>
+  <div class="section-title">Space Grotesk + Instrument Sans</div>
+  <div class="section-desc">Bold geometric sans-serif headlines with a warm, readable body. The italic Instrument Sans adds fashion-editorial moments ("Excellence", "Time").</div>
+
+  <div class="type-grid">
+    <div class="type-card" style="background:var(--surface);">
+      <div class="meta">Headlines on dark — Space Grotesk 700</div>
+      <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.03em;">Where Artistry Meets <span style="color:var(--gold); font-family:'Instrument Sans',sans-serif; font-style:italic; font-weight:500;">Excellence.</span></h3>
+      <p style="font-family:'Instrument Sans',sans-serif; color:rgba(232,227,218,0.5);">Five salons across Tampa Bay. World-traveled stylists. One uncompromising standard.</p>
+    </div>
+    <div class="type-card" style="background:var(--cream); color:var(--black);">
+      <div class="meta" style="color:rgba(28,26,23,0.3);">Headlines on light — Space Grotesk 700</div>
+      <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.03em; color:var(--black);">It's You <span style="color:var(--gold); font-family:'Instrument Sans',sans-serif; font-style:italic; font-weight:500;">Time.</span></h3>
+      <p style="font-family:'Instrument Sans',sans-serif; color:rgba(28,26,23,0.45);">Schedule an appointment at your nearest J. Joseph Salon. Five locations, open seven days.</p>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Space Grotesk 700 — Headlines</span>
+    <span class="tag">Space Grotesk 600 — Subheads</span>
+    <span class="tag">Instrument Sans 400 — Body</span>
+    <span class="tag">Instrument Sans Italic — Accent</span>
+    <span class="tag">Tracking: -0.03em headlines, normal body</span>
+  </div>
+</section>
+
+
+<!-- 03: PAGE ARCHITECTURE -->
+<section class="mb-section">
+  <div class="section-label">03 — Architecture</div>
+  <div class="section-title">Scroll-Driven Narrative</div>
+  <div class="section-desc">Not sections stacked on a page. A continuous story with scenes that transition cinematically. Pinned moments, horizontal movement, reveals.</div>
+
+  <div class="arch-flow">
+    <div class="arch-node active">
+      <h5>Scene 1</h5>
+      <p>Hero — text reveal<br>+ video bg</p>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node active">
+      <h5>Scene 2</h5>
+      <p>Pinned crossfade<br>brand narrative</p>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node active">
+      <h5>Scene 3</h5>
+      <p>Horizontal scroll<br>services</p>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node active">
+      <h5>Scene 4</h5>
+      <p>Interactive<br>location index</p>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node active">
+      <h5>Scene 5</h5>
+      <p>Single<br>testimonial</p>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-node active">
+      <h5>Scene 6</h5>
+      <p>CTA close<br>+ minimal footer</p>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">GSAP ScrollTrigger — pinned sections</span>
+    <span class="tag">Lenis — smooth scroll</span>
+    <span class="tag">No scroll hijack on mobile</span>
+    <span class="tag">Apple product-page technique</span>
+    <span class="tag">Full-screen menu overlay, not dropdowns</span>
+  </div>
+</section>
+
+
+<!-- 04: UI PATTERNS -->
+<section class="mb-section">
+  <div class="section-label">04 — UI Patterns</div>
+  <div class="section-title">Components</div>
+  <div class="section-desc">How each piece looks and feels. Hover over the pattern cards.</div>
+
+  <div class="patterns-grid">
+    <!-- Nav + Menu -->
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:var(--black);">
+        <div class="mock-nav">
+          <div class="logo">J. Joseph Salon</div>
+          <div class="right">
+            <div class="book">Book Now</div>
+            <div class="burger"><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="mock-menu" style="margin-top:16px; padding:24px; gap:20px;">
+          <nav style="display:flex; flex-direction:column; gap:2px;">
+            <a style="font-size:1.2rem;">Home</a>
+            <a style="font-size:1.2rem;">About</a>
+            <a style="font-size:1.2rem;">Services</a>
+            <a style="font-size:1.2rem;">Locations</a>
+            <a style="font-size:1.2rem; color:var(--gold);">Book Now</a>
+          </nav>
+          <div class="side">
+            <div>
+              <div class="side-label">Locations</div>
+              <a style="font-size:0.7rem;">Land O' Lakes</a>
+              <a style="font-size:0.7rem;">Lutz</a>
+              <a style="font-size:0.7rem;">Citrus Park</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pattern-info">
+        <h4>Nav + Full-Screen Menu</h4>
+        <p>Minimal bar (logo + book + burger). Menu opens as animated full-screen overlay with GSAP clip-path. All navigation lives here — no footer nav needed.</p>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:var(--black);">
+        <div class="mock-hero-text">
+          <div class="overline">Voted Best in Tampa Bay</div>
+          <h2>Where<br>Artistry<br>Meets<br><em>Excellence.</em></h2>
+          <div class="cta">Request Appointment →</div>
+        </div>
+      </div>
+      <div class="pattern-info">
+        <h4>Hero — Full Viewport</h4>
+        <p>Video/photo background. Each word reveals independently via GSAP stagger. CTA as underlined text link, not a button. Scroll indicator pulses below.</p>
+      </div>
+    </div>
+
+    <!-- Horizontal Services -->
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:var(--cream); padding:0;">
+        <div class="mock-hscroll">
+          <div class="mock-hscroll-card">
+            <div class="num">01</div>
+            <h5>Cut & Style</h5>
+            <div class="price">From $41</div>
+          </div>
+          <div class="mock-hscroll-card">
+            <div class="num">02</div>
+            <h5>Color</h5>
+            <div class="price">From $75</div>
+          </div>
+          <div class="mock-hscroll-card">
+            <div class="num">03</div>
+            <h5>Treatments</h5>
+            <div class="price">From $34</div>
+          </div>
+          <div class="mock-hscroll-card">
+            <div class="num">04</div>
+            <h5>Extensions</h5>
+            <div class="price">Consult</div>
+          </div>
+        </div>
+      </div>
+      <div class="pattern-info">
+        <h4>Services — Horizontal Scroll</h4>
+        <p>ScrollTrigger pins the section while you scroll vertically — content moves horizontally. Full-panel cards with photos. Drag/swipe on mobile.</p>
+      </div>
+    </div>
+
+    <!-- Location Index -->
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:var(--black-warm); padding:0;">
+        <div class="mock-loc-index">
+          <div class="mock-loc-item">
+            <span class="loc-name">Land O' Lakes</span>
+            <span class="loc-tag">Original</span>
+          </div>
+          <div class="mock-loc-item">
+            <span class="loc-name">Lutz</span>
+            <span class="loc-tag">Daytime TV</span>
+          </div>
+          <div class="mock-loc-item">
+            <span class="loc-name">Citrus Park</span>
+            <span class="loc-tag">Creative Hub</span>
+          </div>
+          <div class="mock-loc-item">
+            <span class="loc-name">Odessa</span>
+            <span class="loc-tag">A-List Winner</span>
+          </div>
+          <div class="mock-loc-item">
+            <span class="loc-name" style="color:var(--gold);">Wesley Chapel</span>
+            <span class="loc-tag" style="color:var(--gold);">Newest</span>
+          </div>
+        </div>
+      </div>
+      <div class="pattern-info">
+        <h4>Locations — Interactive Index</h4>
+        <p>Large text links, not cards. Hover/tap a name → photo + details slide in from the side. Feels like a table of contents, not a grid.</p>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:var(--black); text-align:center; justify-content:center;">
+        <div style="font-size:4rem; font-family:'Space Grotesk',sans-serif; font-weight:700; color:rgba(175,131,26,0.06); position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">5.0</div>
+        <div style="color:var(--gold); font-size:0.8rem; letter-spacing:4px; margin-bottom:16px; position:relative;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-style:italic; font-size:0.82rem; line-height:1.6; color:rgba(232,227,218,0.7); max-width:280px; margin:0 auto; position:relative;">"Her talent and attention to detail always exceed my expectations."</p>
+        <div style="margin-top:12px; font-size:0.65rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; position:relative;">Jhoanny S.</div>
+      </div>
+      <div class="pattern-info">
+        <h4>Testimonial — Single Moment</h4>
+        <p>One powerful quote at a time. Giant "5.0" as parallax background. Pulls from Google Reviews API. Minimal, confident.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="pattern-card">
+      <div class="pattern-preview" style="background:var(--black); justify-content:flex-end;">
+        <div style="text-align:center; margin-bottom:32px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:2rem; letter-spacing:-0.03em;">It's You <span style="color:var(--gold); font-family:'Instrument Sans',sans-serif; font-style:italic; font-weight:500;">Time.</span></div>
+          <div style="margin-top:12px; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:var(--cream); border-bottom:1px solid var(--gold); display:inline-block; padding-bottom:3px;">Request Appointment →</div>
+        </div>
+        <div class="mock-footer">
+          <span>© 2026 J. Joseph Salon</span>
+          <span><a>Instagram</a><a>TikTok</a><a>Facebook</a></span>
+          <span><a>Privacy</a> · <a>Cookies</a></span>
+        </div>
+      </div>
+      <div class="pattern-info">
+        <h4>CTA Close + Minimal Footer</h4>
+        <p>No 4-column footer. One line: copyright + social + legal. All nav lives in the menu overlay. The CTA is the real ending — the footer is a whisper.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 05: INTERACTIONS -->
+<section class="mb-section">
+  <div class="section-label">05 — Interactions</div>
+  <div class="section-title">Motion & Feel</div>
+  <div class="section-desc">Every interaction is intentional. The site should feel alive without being distracting.</div>
+
+  <div class="tags">
+    <span class="tag">Custom gold cursor — mix-blend-mode: difference</span>
+    <span class="tag">Film grain SVG overlay — 3% opacity</span>
+    <span class="tag">Lenis smooth scroll — synced to GSAP ticker</span>
+    <span class="tag">Word-by-word text reveals — GSAP stagger</span>
+    <span class="tag">Scroll-pinned scenes — ScrollTrigger pin</span>
+    <span class="tag">Horizontal scroll (services) — ScrollTrigger scrub</span>
+    <span class="tag">Parallax background text — scroll velocity</span>
+    <span class="tag">Menu overlay — clip-path animation</span>
+    <span class="tag">Nav link underlines — scaleX from right</span>
+    <span class="tag">Button fill — translateX gold on hover</span>
+    <span class="tag">Location hover — indent + color shift</span>
+    <span class="tag">No scroll hijack on mobile</span>
+    <span class="tag">Touch: swipe carousels, no custom cursor</span>
+    <span class="tag">Fixed "Book" button — bottom bar on mobile</span>
+  </div>
+</section>
+
+
+<!-- 06: TECH -->
+<section class="mb-section">
+  <div class="section-label">06 — Tech Stack</div>
+  <div class="section-title">Astro 5 + GSAP + Vercel</div>
+  <div class="section-desc">Static-first for speed. React islands only where interactivity is needed. Zero server maintenance.</div>
+
+  <div class="arch-flow" style="flex-wrap:wrap; gap:12px;">
+    <div class="arch-node"><h5>Astro 5</h5><p>Framework</p></div>
+    <div class="arch-node"><h5>React</h5><p>Interactive islands</p></div>
+    <div class="arch-node"><h5>GSAP</h5><p>Animations</p></div>
+    <div class="arch-node"><h5>Lenis</h5><p>Smooth scroll</p></div>
+    <div class="arch-node"><h5>Tailwind 4</h5><p>Styling</p></div>
+    <div class="arch-node"><h5>Vercel</h5><p>Hosting (free)</p></div>
+    <div class="arch-node"><h5>Boulevard</h5><p>Booking</p></div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="padding:48px; text-align:center; font-size:0.7rem; color:rgba(255,255,255,0.15);">
+  J. Joseph Salon — Redesign Moodboard — April 2026<br>
+  <span style="color:var(--gold);">Approved. Ready to build.</span>
+</footer>
+
+</body>
+</html>
