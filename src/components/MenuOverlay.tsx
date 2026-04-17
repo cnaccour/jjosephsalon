@@ -153,7 +153,7 @@ export default function MenuOverlay() {
           <div className="flex flex-col justify-between gap-12">
             {/* Locations */}
             <div className="menu-meta">
-              <span className="block text-[0.6rem] font-heading uppercase tracking-[0.2em] text-white/40 mb-4">
+              <span className="block text-[0.6rem] font-heading tracking-[0.2em] text-white/40 mb-4">
                 Locations
               </span>
               <div className="flex flex-col gap-2">
@@ -221,21 +221,21 @@ export default function MenuOverlay() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleLinkClick}
-            className="menu-meta text-[0.6rem] font-body text-white/30 hover:text-white/60 tracking-wider uppercase transition-colors duration-200"
+            className="menu-meta text-[0.6rem] font-body text-white/30 hover:text-white/60 tracking-wider transition-colors duration-200"
           >
             Careers
           </a>
           <a
             href="/salon-policies"
             onClick={handleLinkClick}
-            className="menu-meta text-[0.6rem] font-body text-white/30 hover:text-white/60 tracking-wider uppercase transition-colors duration-200"
+            className="menu-meta text-[0.6rem] font-body text-white/30 hover:text-white/60 tracking-wider transition-colors duration-200"
           >
             Policies
           </a>
           <a
             href="/privacy-policy"
             onClick={handleLinkClick}
-            className="menu-meta text-[0.6rem] font-body text-white/30 hover:text-white/60 tracking-wider uppercase transition-colors duration-200"
+            className="menu-meta text-[0.6rem] font-body text-white/30 hover:text-white/60 tracking-wider transition-colors duration-200"
           >
             Privacy
           </a>

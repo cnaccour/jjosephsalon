@@ -347,13 +347,11 @@ export default function Scene1Hero() {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          padding-left: 48px;
-          padding-right: 48px;
+          padding: 48px;
         }
         @media (max-width: 768px) {
           .hero-slide-content {
-            padding-left: 24px;
-            padding-right: 24px;
+            padding: 24px;
           }
         }
         .hero-progress-track {

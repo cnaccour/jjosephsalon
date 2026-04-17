@@ -205,7 +205,6 @@ function LocationRow({
               fontFamily: "var(--font-body)",
               fontWeight: 500,
               fontSize: "0.55rem",
-              textTransform: "uppercase",
               letterSpacing: "0.12em",
               color: "var(--color-gold)",
               whiteSpace: "nowrap",
