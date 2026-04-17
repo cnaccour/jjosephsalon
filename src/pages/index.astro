@@ -6,9 +6,10 @@ import servicesData from "@/data/services.json";
 
 import Scene1Hero from "@/components/home/Scene1Hero";
 import Scene3Services from "@/components/home/Scene3Services";
+import AboutCompact from "@/components/home/AboutCompact.astro";
+import LocationsCompact from "@/components/home/LocationsCompact.astro";
 import Scene5Review from "@/components/home/Scene5Quote";
 
-/* Pick a random review on each build / page load */
 const reviews = [
   {
     text: "I've been seeing Kariny for over five years, and she is truly the best stylist. Her talent, professionalism, and attention to detail always exceed my expectations. I wouldn't trust anyone else with my hair.",
@@ -23,7 +24,7 @@ const reviews = [
     author: "Anvesh K.",
   },
   {
-    text: "Serena gave me one of the best men's haircuts I've had. She listened carefully, understood exactly what I wanted, and delivered a clean, precise fade with sharp lines and perfect blending.",
+    text: "Serena gave me one of the best men's haircut I've had. She listened carefully, understood exactly what I wanted, and delivered a clean, precise fade with sharp lines and perfect blending.",
     author: "Alexis W.",
   },
 ];
@@ -90,6 +91,8 @@ const structuredData = {
   <main>
     <Scene1Hero client:load />
     <Scene3Services client:visible services={servicesData.homepage_services} />
+    <AboutCompact />
+    <LocationsCompact />
     <Scene5Review client:visible review={review} />
   </main>
 </Layout>

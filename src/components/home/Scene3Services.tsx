@@ -26,6 +26,10 @@ interface Props {
 /* ------------------------------------------------------------------ */
 
 const DESKTOP_BP = 768;
+const PANEL_W_DESKTOP = 380;
+const PANEL_W_MOBILE = 280;
+const IMG_H_DESKTOP = 360;
+const IMG_H_MOBILE = 300;
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                          */
@@ -88,14 +92,14 @@ export default function Scene3Services({ services }: Props) {
     { scope: wrapperRef, dependencies: [isMobile] },
   );
 
-  /* ---- Drag-to-scroll (desktop) ---- */
+  /* ---- Drag-to-scroll (mobile) ---- */
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollStart = useRef(0);
 
   const onPointerDown = useCallback(
     (e: React.PointerEvent) => {
-      if (!isMobile) return; // drag only on mobile native scroll
+      if (!isMobile) return;
       const track = trackRef.current;
       if (!track) return;
       isDragging.current = true;
@@ -134,10 +138,9 @@ export default function Scene3Services({ services }: Props) {
       className="relative"
       style={{ background: "var(--color-cream)" }}
     >
-      {/* Inner container — sticky on desktop, normal on mobile */}
       <div
         className="relative overflow-hidden"
-        style={{ height: isMobile ? "auto" : "100vh" }}
+        style={{ height: isMobile ? "auto" : "auto" }}
       >
         {/* ---- Header row ---- */}
         <div
@@ -173,10 +176,9 @@ export default function Scene3Services({ services }: Props) {
           className={
             isMobile
               ? "flex gap-4 overflow-x-auto px-6 pb-8 snap-x snap-mandatory scrollbar-none"
-              : "flex gap-6 px-6 md:px-12"
+              : "flex gap-6 px-6 md:px-12 pb-10"
           }
           style={{
-            height: isMobile ? "auto" : "calc(100vh - 100px)",
             willChange: isMobile ? "auto" : "transform",
             ...(isMobile
               ? { WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }
@@ -196,27 +198,34 @@ export default function Scene3Services({ services }: Props) {
                   : "flex-shrink-0"
               }
               style={{
-                width: isMobile ? "80vw" : "45vw",
-                height: isMobile ? "70vh" : "100%",
-                minWidth: isMobile ? "80vw" : "45vw",
+                width: isMobile ? PANEL_W_MOBILE : PANEL_W_DESKTOP,
+                minWidth: isMobile ? PANEL_W_MOBILE : PANEL_W_DESKTOP,
               }}
             >
+              {/* Image area */}
               <div
-                className="relative flex h-full overflow-hidden rounded-sm"
+                className="relative overflow-hidden rounded-sm"
                 style={{
+                  height: isMobile ? IMG_H_MOBILE : IMG_H_DESKTOP,
                   background: "var(--color-cream-dark)",
                 }}
               >
-                {/* Left — image placeholder (55%) */}
-                <div
-                  className="relative flex items-center justify-center"
+                {/* Gold numbered label */}
+                <span
+                  className="absolute top-3 left-3 z-10 text-xs tracking-widest"
                   style={{
-                    width: "55%",
-                    background: "var(--color-cream-dark)",
+                    fontFamily: "var(--font-heading)",
+                    fontWeight: 500,
+                    color: "var(--color-gold)",
                   }}
                 >
+                  {pad(i + 1)}
+                </span>
+
+                {/* Placeholder for image */}
+                <div className="flex h-full w-full items-center justify-center">
                   <span
-                    className="select-none text-sm tracking-wide opacity-30"
+                    className="select-none text-xs tracking-wide opacity-25"
                     style={{
                       fontFamily: "var(--font-body)",
                       color: "var(--color-black)",
@@ -225,98 +234,55 @@ export default function Scene3Services({ services }: Props) {
                     [ {service.name} ]
                   </span>
                 </div>
+              </div>
 
-                {/* Right — text content (45%) */}
-                <div
-                  className="flex flex-col justify-between p-5 md:p-8"
+              {/* Text area below image */}
+              <div className="pt-3 pb-1">
+                <h3
+                  className="mb-1"
                   style={{
-                    width: "45%",
-                    background: "var(--color-cream)",
+                    fontFamily: "var(--font-heading)",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    lineHeight: 1.3,
+                    color: "var(--color-black)",
                   }}
                 >
-                  {/* Top */}
-                  <div>
-                    {/* Gold number */}
-                    <span
-                      className="mb-4 block text-sm tracking-widest md:mb-6"
-                      style={{
-                        fontFamily: "var(--font-heading)",
-                        fontWeight: 500,
-                        color: "var(--color-gold)",
-                      }}
-                    >
-                      {pad(i + 1)}
-                    </span>
+                  {service.name}
+                </h3>
 
-                    {/* Service name */}
-                    <h3
-                      className="mb-3 md:mb-4"
-                      style={{
-                        fontFamily: "var(--font-heading)",
-                        fontWeight: 600,
-                        fontSize: "1.5rem",
-                        lineHeight: 1.2,
-                        color: "var(--color-black)",
-                      }}
-                    >
-                      {service.name}
-                    </h3>
+                <p
+                  className="mb-2"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.8rem",
+                    lineHeight: 1.5,
+                    color: "var(--color-cream-dark)",
+                    mixBlendMode: "multiply",
+                    opacity: 0.45,
+                  }}
+                >
+                  {service.description}
+                </p>
 
-                    {/* Description */}
-                    <p
-                      className="leading-relaxed"
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: "0.85rem",
-                        color: "var(--color-cream-dark)",
-                        mixBlendMode: "multiply",
-                        opacity: 0.55,
-                      }}
-                    >
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Bottom */}
-                  <div className="flex items-end justify-between">
-                    {/* Price */}
-                    <span
-                      style={{
-                        fontFamily: "var(--font-heading)",
-                        fontWeight: 500,
-                        fontSize: "0.95rem",
-                        color: "var(--color-gold)",
-                      }}
-                    >
-                      {service.price_from === "Consultation"
-                        ? "Consultation"
-                        : `From ${service.price_from}`}
-                    </span>
-
-                    {/* Arrow link */}
-                    <a
-                      href="/services"
-                      aria-label={`Learn more about ${service.name}`}
-                      className="group flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300"
-                      style={{
-                        border: "1px solid var(--color-gold)",
-                        color: "var(--color-gold)",
-                      }}
-                    >
-                      <span
-                        className="inline-block text-lg transition-transform duration-300 group-hover:rotate-[-45deg]"
-                        aria-hidden="true"
-                      >
-                        &rarr;
-                      </span>
-                    </a>
-                  </div>
-                </div>
+                <span
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontWeight: 500,
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.05em",
+                    color: "var(--color-gold)",
+                  }}
+                >
+                  {service.price_from === "Consultation"
+                    ? "Consultation"
+                    : `From ${service.price_from}`}
+                </span>
               </div>
             </article>
           ))}
 
-          {/* Trailing spacer — gives last card room on desktop */}
+          {/* Trailing spacer on desktop */}
           {!isMobile && (
             <div className="flex-shrink-0" style={{ width: "5vw" }} />
           )}
